@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prayer Times Map</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Amiri:wght@400;700&family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="classic">
+    <select id="interface-selector" onchange="changeInterface(this.value)">
+        <option value="classic">واجهة كلاسيكية</option>
+        <option value="dark">واجهة داكنة</option>
+        <option value="islamic">واجهة إسلامية</option>
+    </select>
+    <div id="search-bar">
+        <input type="text" id="search-input" placeholder="ابحث عن مدينة...">
+        <button onclick="searchCity()"><i class="fas fa-search"></i> بحث</button>
+        <input type="number" id="height-input" placeholder="الارتفاع (متر، اختياري)">
+        <button onclick="applyHeight()"><i class="fas fa-check"></i> تطبيق</button>
+        <select id="method">
+            <option value="egypt">الهيئة العامة للمساحة</option>
+            <option value="hanafi">حنفي</option>
+            <option value="shafi">شافعي</option>
+        </select>
+    </div>
+    <div id="map"></div>
+    <div id="prayer-times"></div>
+    <div id="favorites">
+        <h3>المواقع المفضلة</h3>
+        <ul id="favorites-list"></ul>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
